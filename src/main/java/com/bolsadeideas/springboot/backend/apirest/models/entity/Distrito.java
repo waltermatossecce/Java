@@ -1,5 +1,7 @@
 package com.bolsadeideas.springboot.backend.apirest.models.entity;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,10 +14,13 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name="distritos")
-public class Distrito {
+public class Distrito implements Serializable{
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	private String nombre;
+	
+	private static final long serialVersionUID = 1L;
 }

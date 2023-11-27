@@ -11,18 +11,14 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name="clientes")
-@AllArgsConstructor
-@NoArgsConstructor
 public class Cliente implements Serializable{
 
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-
 	private Long id;
 	@NotEmpty(message = "no puede estar vacio")
 	@Size(min = 4,max = 12 ,message = "el tamaño tiene que estar entre 4 y 12")
